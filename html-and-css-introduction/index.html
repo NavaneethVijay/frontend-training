@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tags are used to provide addtionaly information of the website -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- This tag is to inform about responsiveness of the website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <title>Title of your website</title>
+
+     <!-- 1. Adding your css from externally -->
+     <!-- When the file is in same location as the current file -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- When the file is in different location as the current file -->
+        <!-- index
+                |styles
+                    |main.css -->
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <!-- 2. Adding your css internally -->
+    <style>
+        /* add your css  */
+        body {
+            /* background-color: blue; */
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- BLOCK ELEMENTS
+    These elements take up full space in the browser and they are placed from top to bottom
+    Example:
+    div header footer h1 h2 etc.. -->
+
+
+    <!-- INLINE ELEMENTS
+    These elements take up space as much the content is available and they are placed from left to right
+    Example:
+    span a etc... -->
+
+    <div class="box-grid">
+        <div class="box-grid-item">
+            <div class="item-content">
+                <div>
+                    <img src="" alt="">
+                </div>
+
+
+
+                <!-- first option -->
+                <!--   
+                    heading h3 {
+                        font-size: 30px;
+                    }
+                 -->
+
+                <div class="heading">
+                    <h4>sedans</h4>
+                </div>
+
+
+                <!-- second option -->
+                <!-- Styling the tags by class is preferrable than using the h3 tag. 
+                If the user or the tag is changed in html you have to change your css as well. -->
+                <!-- 
+                    heading {
+                        font-size: 30px;
+                    }
+                -->
+
+                <div>
+                    <h2 class="heading">sedans</h2>
+                </div>
+
+
+                <div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Vitae, iste atque. Illum deleniti ex vitae ratione maxime aut
+                         delectus deserunt provident! Voluptate enim ratione, vel omnis quis iure quibusdam nulla?
+                    </p>
+                </div>
+
+                <div>
+                    <a href="http://">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

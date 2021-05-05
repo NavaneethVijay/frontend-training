@@ -1,0 +1,60 @@
+/* 1. Browser reads the css from top to bottom and applies  */
+body {
+   font-size: 40px;
+}
+
+body {
+    font-size: 30px;
+ }
+
+ /* This css will be applied finally by ignoring the prev two styles */
+ body {
+    font-size: 50px;
+ }
+
+
+ /* By adding parent element or class we give high preference to that styles */
+
+ /* This has least */
+main {
+     font-size: 10px;
+ }
+body main {
+    font-size: 50px;
+}
+
+ /* This has most preference and it will applied by the browser  */
+html body main {
+    font-size: 20px;
+}
+
+/* Avoid using !important, instead use parent classes to increase the styles preference */
+main {
+    font-size: 10px !important;
+}
+
+
+/* class selector */
+
+/* Class should be used when styling similar elements, can also be used for styling a single design element */
+.first-section{
+
+}
+
+/* <div class="first-class second-class"> */
+/* This approach is used to select element based two classes */
+.first-class.second-class{
+
+}
+
+
+/* ID selector */
+
+/* A page should contain unique ID and should not be repeated */
+#first{
+
+}
+
+
+
+
