@@ -1,0 +1,157 @@
+/* Create variables to reuse the values */
+:root {
+    --body-color: hsl(233, 47%, 7%);
+    --body-text-color: #fff;
+    --body-font-size: 15px;
+    --card-color: hsl(244, 38%, 16%);
+    --accent-color: hsl(277, 64%, 61%);
+    --subheading-color: hsla(0, 0%, 100%, 0.75);
+    --stat-heading-color: hsla(0, 0%, 100%, 0.6);
+}
+
+/* Please refer https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--body-text-color);
+    font-size: var(--body-font-size);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Mobile first approach */
+main {
+    background-color: var(--card-color) ;
+    width: 90%;
+
+    /* Simlar to margin and padding, we have shorthand notation for most of css properties */
+    /* 
+    margin-top: 12%;
+    margin-bottom: 12%;
+    margin-left: auto;
+    margin-right: auto; */
+
+    /* margin: 12% auto 12% auto ; */
+
+    /* When top/bottom and left/right are same */
+    margin: 12% auto;
+
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.content{
+    padding: 20px 30px;
+}
+
+.content-heading, .stats-count{
+    font-size: 28px;
+    font-weight: 700;
+}
+.content p {
+    color: var(--subheading-color);
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.content-stats{
+    margin-top: 70px;
+}
+
+.stats-item{
+    margin-bottom: 30px;
+}
+.stats-count {
+    margin: 0;
+}
+.stats-label{
+    margin: 8px 0;
+    color: var(--stat-heading-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+}
+.image-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Please refer https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements */
+ .image-wrapper::after {
+    /*  Important to add content: '' otherwise after element wont be visisble since there is no content*/
+    content: ''; 
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+}
+
+/* Targetting desktop designs */
+@media screen and (min-width: 1024px) {
+
+    main {
+        width: 80%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .content, .content-image {
+        width: 50%;
+    }
+    .content{
+        padding: 20px 60px;
+        text-align: left;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content-stats {
+        text-align: left;
+    }
+
+    .stats-item {
+        display: inline-block;
+        width: 31.33%;
+    }
+    .content-heading, .stats-count{
+        font-size: 36px;
+    }
+    
+    .content p {
+        margin-top: 0;
+        font-size: 20px;
+    }
+    .image-wrapper{
+       height: 100%;
+    }
+    .content-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Targetting desktop designs with specifc size */
+@media screen and (min-width: 1280px){
+
+    .content p {
+        max-width: 90%;
+    }
+}
