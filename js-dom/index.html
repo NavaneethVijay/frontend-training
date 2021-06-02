@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JS</title>
+    <style>
+        .Faq__content{
+            display: none;
+        }
+        .Faq__item.active .Faq__content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="main">
+            <img width="400" src="https://lh6.googleusercontent.com/KJfJcOIfRcJAPS6jGom86i3UCZj3Sah6CGEl0zuPHZDaii4i6gj1wKnD74lgEfKeBjxPHIUWM8RrQW_4I_NMZxGSknsBIiCtr_Ra5dyEB4XM8gLYKW1RroITBKN_ZjBQomeWeS7O" alt="">
+        </div>
+        <div>
+            <h2>FAQ</h2>
+            <div class="Faq">
+                <div class="Faq__item">
+                    <h3 data-count="1" class="Faq__title">Competitive exchange rates</h3>
+                    <div class="Faq__content">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                    </div>
+                </div>
+                <div name="secondTitle" class="Faq__item">
+                    <h3 data-count="2" class="Faq__title">Second text title</h3>
+                    <div class="Faq__content">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let faqItems = document.getElementsByClassName('Faq__item')
+        Array.from(faqItems, ( faqItem) => {
+            faqItem.addEventListener('click', function (event){
+                faqItem.classList.toggle('active')
+            })
+        })
+    </script>
+</body>
+</html>
